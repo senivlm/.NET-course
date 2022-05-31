@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Matrix
-{
+{//Rhctynfh
     public class Matrix
     {
         private int n;
