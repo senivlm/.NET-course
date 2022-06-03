@@ -1,0 +1,32 @@
+E:\.NET-Camp\Vector\bin\Debug\net5.0\Vector.exe
+E:\.NET-Camp\Vector\bin\Debug\net5.0\Vector.deps.json
+E:\.NET-Camp\Vector\bin\Debug\net5.0\Vector.runtimeconfig.json
+E:\.NET-Camp\Vector\bin\Debug\net5.0\Vector.runtimeconfig.dev.json
+E:\.NET-Camp\Vector\bin\Debug\net5.0\Vector.dll
+E:\.NET-Camp\Vector\bin\Debug\net5.0\ref\Vector.dll
+E:\.NET-Camp\Vector\bin\Debug\net5.0\Vector.pdb
+E:\.NET-Camp\Vector\obj\Debug\net5.0\Vector.GeneratedMSBuildEditorConfig.editorconfig
+E:\.NET-Camp\Vector\obj\Debug\net5.0\Vector.AssemblyInfoInputs.cache
+E:\.NET-Camp\Vector\obj\Debug\net5.0\Vector.AssemblyInfo.cs
+E:\.NET-Camp\Vector\obj\Debug\net5.0\Vector.csproj.CoreCompileInputs.cache
+E:\.NET-Camp\Vector\obj\Debug\net5.0\Vector.dll
+E:\.NET-Camp\Vector\obj\Debug\net5.0\ref\Vector.dll
+E:\.NET-Camp\Vector\obj\Debug\net5.0\Vector.pdb
+E:\.NET-Camp\Vector\obj\Debug\net5.0\Vector.genruntimeconfig.cache
+E:\.NET-Camp\Vector\obj\Debug\net5.0\Vector.csproj.AssemblyReference.cache
+D:\.NET course\Vector\bin\Debug\net5.0\Vector.exe
+D:\.NET course\Vector\bin\Debug\net5.0\Vector.deps.json
+D:\.NET course\Vector\bin\Debug\net5.0\Vector.runtimeconfig.json
+D:\.NET course\Vector\bin\Debug\net5.0\Vector.runtimeconfig.dev.json
+D:\.NET course\Vector\bin\Debug\net5.0\Vector.dll
+D:\.NET course\Vector\bin\Debug\net5.0\Vector.pdb
+D:\.NET course\Vector\obj\Debug\net5.0\Vector.csproj.AssemblyReference.cache
+D:\.NET course\Vector\obj\Debug\net5.0\Vector.GeneratedMSBuildEditorConfig.editorconfig
+D:\.NET course\Vector\obj\Debug\net5.0\Vector.AssemblyInfoInputs.cache
+D:\.NET course\Vector\obj\Debug\net5.0\Vector.AssemblyInfo.cs
+D:\.NET course\Vector\obj\Debug\net5.0\Vector.csproj.CoreCompileInputs.cache
+D:\.NET course\Vector\obj\Debug\net5.0\Vector.dll
+D:\.NET course\Vector\obj\Debug\net5.0\refint\Vector.dll
+D:\.NET course\Vector\obj\Debug\net5.0\Vector.pdb
+D:\.NET course\Vector\obj\Debug\net5.0\Vector.genruntimeconfig.cache
+D:\.NET course\Vector\obj\Debug\net5.0\ref\Vector.dll
