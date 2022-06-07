@@ -54,6 +54,7 @@ namespace Vector
         {
 
             StreamReader reader1 = new StreamReader(file1);
+            //ці нулі візьмуть вже участь у сортуванні, чого нам не треба!
             int el1 = 0;
             StreamReader reader2 = new StreamReader(file2);
             int el2 = 0;
