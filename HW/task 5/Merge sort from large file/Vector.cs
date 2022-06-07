@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Vector
-{
+{//Ваш номер 17!!!!
     enum PivotChoiсe
     {
         first,
