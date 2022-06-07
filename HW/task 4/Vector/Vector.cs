@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Vector
-{
+{//ваш номер 14
     enum PivotChoiсe
     {
         first,
@@ -212,12 +212,14 @@ namespace Vector
             SortArray(0, arr.Length - 1, choiсe);
         }
 
-
+// Треба писати самій!
         private void SortArray(int leftIndex, int rightIndex, PivotChoiсe choiсe)
         {
             var i = leftIndex;
             var j = rightIndex;
             var pivot = arr[leftIndex];
+            // значення enum краще записувати з великої літери.
+            //Прозоріше б switch
             if (choiсe == PivotChoiсe.middle)
             {
                 pivot = arr[(rightIndex + leftIndex)/2];
