@@ -63,10 +63,10 @@ namespace task_1
         {
             Console.WriteLine("Enter input file");
             string readerName = Console.ReadLine();
-            bool successfulRead = false;
             Storage storage = new Storage();
             StreamReader reader = null;
             StreamWriter writer = null;
+            bool successfulRead = false;
             for (int i = 0; i < 3 && !successfulRead; i++)
             {
                 try
@@ -74,7 +74,7 @@ namespace task_1
                     if (readerName == "")
                         throw new FileNotFoundException();
                     reader = new StreamReader(readerName);
-                    writer = new StreamWriter(errorRegistrationName);
+                    writer = new StreamWriter(errorRegistrationName, true);
                     successfulRead = true;
                     storage = StorageText.ReadFromStreamReader(reader, writer);
                     
@@ -134,22 +134,53 @@ namespace task_1
             }
             return storage ;
         }
-        static public void EditInvalidData(DateTime dateTime)
+        static public void EditInvalidData(DateTime dateTime, Storage storage)
         {
             StreamReader reader = new StreamReader(StorageText.errorRegistrationName);
-            string str = reader.ReadLine();
-            char[] delim = { ' ' , ':', '.'};
-            string[] arr = str.Split(delim, 7);
-            DateTime dateOfRecord = new DateTime(Int32.Parse(arr[2]), Int32.Parse(arr[1]), Int32.Parse(arr[0]),
-                Int32.Parse(arr[3]), Int32.Parse(arr[4]), Int32.Parse(arr[5]));
-            /*if (dateOfRecord > dateTime)
+            while (!reader.EndOfStream)
             {
-                Console.WriteLine("Please, enter this product correctly:\n" + arr[6]);
-                try
+                string str = reader.ReadLine();
+                char[] delim = { ' ', ':', '.' };
+                string[] arr = str.Split(delim, 7);
+                DateTime dateOfRecord = new DateTime(Int32.Parse(arr[2]), Int32.Parse(arr[1]), Int32.Parse(arr[0]),
+                    Int32.Parse(arr[3]), Int32.Parse(arr[4]), Int32.Parse(arr[5]));
+
+
+                if (dateOfRecord > dateTime)
                 {
-                    //розібратись із створенням нового продукту зі стрічки і додати тільки якщо введений правильно
+                    Console.WriteLine("Please, enter this product correctly:\n" + arr[6]);
+                    bool successfulRead = false;
+
+                    str = Console.ReadLine();
+
+                    for (int j = 0; j < 2 && !successfulRead; j++)
+                    {
+                        try
+                        {
+                            arr = str.Split(' ', 2);
+                            Product p = null;
+                            if (arr[0] == "d")
+                            {
+                                p = new DairyProduct();
+                            }
+                            else if (arr[0] == "m")
+                            {
+                                p = new Meat();
+                            }
+                            else
+                                throw new Exception();
+                            p.Read(arr[1]);
+                            successfulRead = true;
+                            storage.AddProduct(p);
+                        }
+                        catch
+                        {
+                            Console.WriteLine($"Invalid data! You have {2 - j} new attemps. Try to enter one more time");
+                            str = Console.ReadLine();
+                        }
+                    }
                 }
-            }*/
+            }
         }
     }
 }

@@ -32,7 +32,11 @@ namespace task_1
             var listOfMeat = shop.SelectMeat();
             Console.WriteLine("All meat:");
             StorageText.WriteToConsole(listOfMeat);
-            
+
+
+            StorageText.EditInvalidData(new DateTime(2022, 6, 10), shop);
+            Console.WriteLine("------------");
+            StorageText.WriteToConsole(shop);
 
             /*
             buy = new Buy(meat);

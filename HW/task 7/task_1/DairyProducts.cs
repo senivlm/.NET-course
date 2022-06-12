@@ -55,7 +55,7 @@ namespace task_1
             {
                 string[] arr = str.Split(' ');
                 if (!char.IsUpper(arr[0][0]))
-                    arr[0] = char.ToUpper(str[0]) + str.Substring(1);
+                    arr[0] = char.ToUpper(arr[0][0]) + arr[0].Substring(1);
                 Name = arr[0];
                 Price = double.Parse(arr[1]);
                 Weight = double.Parse(arr[2]);
