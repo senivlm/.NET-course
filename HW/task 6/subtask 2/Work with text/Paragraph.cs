@@ -9,6 +9,7 @@ namespace Work_with_text
     internal class Paragraph
     {
         string[] sentences;
+        //порушення інкапсуляції без потреби
         public string[] Sentences { get { return sentences; } }
         public Paragraph()
         {
@@ -25,11 +26,13 @@ namespace Work_with_text
                 sb.Append(str + "\n");
             return sb.ToString();
         }
+        //неадекватна назва методів
         public Sentence MaxLengthWords()//для кожного речення
         {
             string[] result = new string[sentences.Length];
             for (int i = 0; i < sentences.Length; i++)
             {
+                //" є проблеми з проектуванням. Залиштесь на обговорення.
                 result[i] = Text.MaxString(Text.SplitWords(sentences[i]).Words);
             }
             return new Sentence(result);
