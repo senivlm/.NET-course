@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 
 namespace Work_with_text
-{
+{//Не знайшла 1 завдання
+   
     class Program
     {
         static void Main(string[] args)
