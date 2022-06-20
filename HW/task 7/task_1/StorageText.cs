@@ -97,6 +97,7 @@ namespace task_1
             return (storage);
 
         }
+       // Цей метод теж можна подати як декоруючий
         static public Storage ReadFromStreamReader(StreamReader reader, StreamWriter errorRegistration)
         {
             Storage storage = new Storage();
