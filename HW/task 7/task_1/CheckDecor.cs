@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace task_1
 {
     internal class CheckDecor : IViewerBuy
-    {
+    {//Намагання зробити декоратор - добре
         public void ViewerBuy(Buy buy)
         {
             Console.WriteLine("*****************");
