@@ -10,6 +10,7 @@ namespace ConsoleApp1
     {
         private DateTime date;
         private int meterReading;
+        public int MeterReading { get { return meterReading; }}
         public Month()
         {
             date = new DateTime();
@@ -26,9 +27,10 @@ namespace ConsoleApp1
             date = new DateTime(2000 + int.Parse(arr[2]), int.Parse(arr[1]), int.Parse(arr[0]));
             meterReading = int.Parse(_number);
         }
+        public DateTime Date { get { return date; } }
         public override string ToString()
         {
-            return date.ToString("dd MMMM yy\t") + meterReading;
+            return date.ToString("   dd MMMM yy - ") + String.Format("{0,-10}", meterReading);
         }
         public void PrintToFileSrteam(StreamWriter writer)
         {

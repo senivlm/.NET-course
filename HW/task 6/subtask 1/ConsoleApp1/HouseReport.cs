@@ -16,24 +16,33 @@ namespace ConsoleApp1
     internal class HouseReport:IReader
     {
         private Quarters quarterNumber;
-        List<QuarterReport> quarterReports;
+        List<ApatrmentReport> quarterReports;
         public HouseReport()
         {
             quarterReports = new();
         }
-        public HouseReport(List<QuarterReport> _qr, Quarters q_numb)
+        public HouseReport(List<ApatrmentReport> _qr, Quarters q_numb)
         {
             quarterReports = new();
-            foreach (QuarterReport q in _qr)
+            foreach (ApatrmentReport q in _qr)
                 quarterReports.Add(q);
+        }
+        public ApatrmentReport this[int i]
+        {
+            get
+            {
+                return quarterReports[i];
+            }
         }
         public void ReadFromStreamReader(StreamReader reader)
         {
+            if (reader.EndOfStream)
+                throw new Exception("File is empty");
             quarterNumber = (Quarters)Int32.Parse(reader.ReadLine());
             int numberOfFlats = Int32.Parse(reader.ReadLine());
             for (int i = 0; i < numberOfFlats; i++)
             {
-                QuarterReport qr = new();
+                ApatrmentReport qr = new();
                 qr.ReadFromStreamReader(reader);
                 quarterReports.Add(qr);
             }
@@ -48,6 +57,49 @@ namespace ConsoleApp1
         public void PrintToFileSrteam(StreamWriter writer)
         {
             writer.Write(this.ToString());
+        }
+
+        public ApatrmentReport MaxElectricityArrears(double uah_kwh)
+        {
+            /*int max = quarterReports.Max(x => x.QuarterUsing());
+            return quarterReports.First(x => x.QuarterUsing() == max);*/
+            
+            ApatrmentReport max = quarterReports[0];
+            int quarterKwh = 0;//використовуємо змінні для збереженя кіловат, щоб не викливати зайвий раз метод QuarterUsing()
+            int maxQuarterKwh = 0;
+            foreach (var item in quarterReports)
+            {
+                quarterKwh = item.QuarterUsing();
+                if (quarterKwh > maxQuarterKwh)
+                {
+                    max = item;
+                    maxQuarterKwh = quarterKwh;
+                }
+            }
+            return max;
+        }
+        public List<ApatrmentReport> ZeroUsing()
+        {
+            return quarterReports.Where(item => item.QuarterUsing() == 0).ToList();
+        }
+        public Dictionary<ApatrmentReport, double> QuarterPayments(double uah_kwh)
+        {
+            Dictionary<ApatrmentReport, double> result = new ();
+            foreach (var item in quarterReports)
+            {
+                result[item] = item.QuarterPayment(uah_kwh);
+            }
+            return result;
+        }
+
+        public Dictionary<ApatrmentReport, int> DaysFromLastReading()
+        {
+            Dictionary<ApatrmentReport, int> result = new ();
+            foreach (var item in quarterReports)
+            {
+                result[item] = (DateTime.Now - item.LastReading).Days;
+            }
+            return result;
         }
     }
 }
