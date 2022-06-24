@@ -1,0 +1,7 @@
+﻿beetroot 50
+potato 20
+cabbage 30
+carrot 25
+onion 25
+pork 200
+cream 50

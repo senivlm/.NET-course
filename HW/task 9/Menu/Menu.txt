@@ -1,0 +1,14 @@
+﻿Borshch
+beetroot 300
+potato 300
+cabbage 300
+carrot 50
+onion 50
+pork 400
+cream 100
+
+Apple pie
+flour 300
+sugar 50
+apples 400
+butter 200
