@@ -8,24 +8,38 @@ namespace Menu
 {
     internal class PriceKurant
     {
-        private Dictionary<string, double> _productPrice;
+        private Dictionary<string, double> productPrice;
         public PriceKurant()
         {
-            _productPrice = new();
+            productPrice = new();
         }
         public PriceKurant(Dictionary<string, double> productPrice) : this()
         {
-            _productPrice = productPrice;
+            productPrice = productPrice;
         }
         public bool TryGetProductPrice(string productName, out double price)
         {
-            if (!_productPrice.TryGetValue(productName, out double result))
+            if (!productPrice.TryGetValue(productName, out double result))
             {
                 price = default;
                 return false;
             }
             price = result;
             return true;
+        }
+        public void AddPrice(string productName, double price)
+        {
+            productPrice[productName] = price;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new();
+            foreach (var (key, value) in this.productPrice)
+            {
+                sb.Append(key + " " + value + "\n");
+            }
+            return sb.ToString(); 
         }
     }
 }

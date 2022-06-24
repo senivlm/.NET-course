@@ -3,5 +3,9 @@ potato 20
 cabbage 30
 carrot 25
 onion 25
-pork 200
+pork 400
 cream 50
+flour 50
+sugar 40
+apples 30
+butter 250

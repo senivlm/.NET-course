@@ -48,7 +48,17 @@ namespace Menu
             //}
             return dish;
         }
-        
+        public static PriceKurant ReadPriceKurant(StreamReader reader)
+        {
+            PriceKurant prices = new PriceKurant();
+
+            while (!reader.EndOfStream)
+            {
+                string[] arr = reader.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
+                prices.AddPrice(arr[0], Int32.Parse(arr[1]));
+            }
+            return prices;
+        }
         public static void PrintToConsole(Menu menu)
         {
             Console.WriteLine(menu);

@@ -12,3 +12,8 @@ flour 300
 sugar 50
 apples 400
 butter 200
+
+Deruny
+potato 400
+onion 80
+flour 100

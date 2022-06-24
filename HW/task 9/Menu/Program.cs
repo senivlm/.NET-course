@@ -9,7 +9,11 @@ namespace Menu
         {
             Menu menu = WorkWithFile.ReadMenu(new StreamReader(@"D:\.NET course\Menu\Menu\Menu.txt"));
             Console.WriteLine(menu.ToString());
-
+            PriceKurant prices = WorkWithFile.ReadPriceKurant(new StreamReader(@"D:\.NET course\Menu\Menu\Prices.txt"));
+            Console.WriteLine(prices);
+            double total = 0;
+            MenuService.TryGetMenuTotalSum(menu, prices, out total);
+            Console.WriteLine(total);
         }
     }
 }

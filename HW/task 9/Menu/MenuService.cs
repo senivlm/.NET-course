@@ -30,7 +30,7 @@ namespace Menu
                 {
                     return false;
                 }
-                sumPrice += poductPrice * dish[key];
+                sumPrice += poductPrice * dish[key]/1000;
             }
             return true;
 
