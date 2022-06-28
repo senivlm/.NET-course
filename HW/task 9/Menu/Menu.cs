@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Menu
-{
+{// За умовою користувач має вибирати валюту, в якій рахується кінцевиц результат
     internal class Menu
     {
         private List<Dish> dishes;
