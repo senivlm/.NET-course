@@ -14,15 +14,15 @@ namespace Matrix
         private int[,] arr;
         private int positionI;
         private int positionJ;
-        bool moveDown;
+        bool moveRight;
         public Matrix()
         {
             n = 1;
             m = 1;
             arr = new int[n, m];
-            positionI = -1;
-            positionJ = 0;
-            moveDown = true;
+            positionI = 0;
+            positionJ = -1;
+            moveRight = true;
         }
         public Matrix(int n_, int m_)
         {
@@ -33,9 +33,9 @@ namespace Matrix
             for (int i = 0; i < n; i++)
                 for (int j = 0; j < m; j++)
                     arr[i, j] = num++;
-            positionI = -1;
-            positionJ = 0;
-            moveDown = true;
+            positionI = 0;
+            positionJ = -1;
+            moveRight = true;
         }
         public object Current
         {
@@ -54,27 +54,27 @@ namespace Matrix
         public bool MoveNext()
         {
             
-            if (positionJ >= m)
+            if (positionI >= n)
             {
                 return false;
             }
-            if(moveDown)
-                ++positionI;
+            if(moveRight)
+                ++positionJ;
             else
-                --positionI;
+                --positionJ;
 
-            if (positionI >= n)
+            if (positionJ >= m)
             {
-                moveDown = false;
-                positionI = n - 1;
-                return ++positionJ < m;
+                moveRight = false;
+                positionJ = m - 1;
+                return ++positionI < n;
                 
             }
-            else if ( positionI < 0)
+            else if ( positionJ < 0)
             {
-                moveDown = true;
-                positionI = 0;
-                return ++positionJ < m;
+                moveRight = true;
+                positionJ = 0;
+                return ++positionI < n;
             }
             else
             {
@@ -84,9 +84,9 @@ namespace Matrix
         }
         public void Reset()
         {
-            positionI = -1;
-            positionJ = 0;
-            moveDown = true;
+            positionI = 0;
+            positionJ = -1;
+            moveRight = true;
         }
         public IEnumerator GetEnumerator()
         {
