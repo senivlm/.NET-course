@@ -1,0 +1,6 @@
+﻿d cream 50 200 14
+m Lamb 300 400 First
+m pork 555 1000 F
+d milk 40 300 6
+d Butter 60 200 30
+m Beef 200 1000 Premium
