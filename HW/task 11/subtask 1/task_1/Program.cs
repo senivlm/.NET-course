@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace task_1
 {
     class Program
-    {
+    {//Де реєстрація на подію?
         static void Main(string[] args)
         {
             Storage shop1 = StorageText.ReadFromFile(@"D:\.NET course\Storage\task_1\input.txt");
